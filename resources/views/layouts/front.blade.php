@@ -71,27 +71,16 @@
 		<div class="loader-section section-right"></div>
 	</div>
 {{-- <body class="mar-pad-r"> --}}
-	<section class="uk-margin-remove container-base">
+	<section class="uk-margin-remove">
 		<div class="uk-offcanvas-content uk-position-relative">
 			@include('layouts.partials_front.header')
-			<section class="uk-margin-remove uk-padding-remove uk-grid-match" uk-grid>
-				<div class="mar-pad-r col-izq uk-visible@m">&nbsp;</div>
-				<div class="uk-width-expand mar-pad-r uk-flex uk-flex-center cont-center">
+			
+			
 
 					@yield('content')
-
-					<!--  -->
-					<div class="pad-25-0"></div>
-				</div>
-				@include('layouts.partials_front.social-right')
-			</section>
-			@if ($config->telefono2)
-				<div class="whatsapp uk-margin-small-right">
-					<a href="https://wa.me/52{{$config->telefono2}}" target="_blank">
-						<img src="{{ asset('img/design/whatsapp.svg') }}" alt="whatsapp.logo" class="">
-					</a>
-				</div>
-			@endif
+				
+			
+		
 			@include('layouts.partials_front.footer')
 
 			{{-- <div id="cotizacion-fixed" class="uk-position-top uk-height-viewport uk-hidden">

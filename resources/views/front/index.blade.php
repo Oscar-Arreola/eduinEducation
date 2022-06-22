@@ -6,19 +6,19 @@
 @section('styleExtras')@endsection
 @section('content')
 
-	<div class="uk-container uk-container-expand uk-margin-remove">
-		<div class="uk-width-1-1 mar-pad-r pad-2-0">
-			<div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="max-height: 600">
+	<div class="uk-container-expand uk-margin-remove">
+		<div class="uk-width-1-1">
+			<div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="max-height: 800;">
 				<ul class="uk-slideshow-items">
 					@foreach ($sliders as $carusel)
 						@if ($carusel->image)
 							<li>
-								<img class="uk-width-1-1" src="{{asset('/img/photos/sliders/'.$carusel->image)}}" alt="" uk-cover>
-								@if ($carusel->url)
-								<div class="uk-position-small uk-position-bottom-center ">
-									<a class="uk-button uk-button-primary" href="{{ $carusel->url }}">Ver Más</a>
+								<img	 src="{{asset('/img/photos/sliders/'.$carusel->image)}}" alt="" uk-cover>
+								{{-- @if ($carusel->url) --}}
+								<div class="uk-position-small uk-position-bottom-center " style="margin-bottom: 3em">
+									<a class="btn-primary" href="{{ $carusel->url }}">SAber Más</a>
 								</div>
-								@endif
+							{{-- 	@endif --}}
 							</li>
 						@else
 							<li>
@@ -42,25 +42,9 @@
 
 				<a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
 				<a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
-
+				<ul class="uk-slideshow-nav uk-position-bottom-right uk-dotnav uk-position-small" style="margin-right: 4em"></ul>
 			</div>
-			{{-- <div class="uk-width-1-1 mar-pad-r uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="autoplay:true;autoplay-interval:2000;animation:fade;max-height: 600;">
-			    <ul class="uk-width-1-1 mar-pad-r uk-slideshow-items">
-			    @foreach ($sliders as $carusel)
-						@if (!empty($carusel->image))
-							<li class="uk-width-1-1 mar-pad-r height-560 uk-active" tabindex="-1">
-								<div class="uk-height-1-1 uk-width-1-1 uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light height-560" data-src="{{asset('/img/photos/sliders/'.$carusel->image)}}" uk-img=""
-								 style="z-index: 1; background-image: url({{asset('/img/photos/sliders/'.$carusel->image)}});"> </div>
-							</li>
-						@endif
-			    @endforeach
-			    </ul>
-
-			    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#"
-			    uk-slidenav-previous uk-slideshow-item="previous"></a>
-			    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#"
-			    uk-slidenav-next uk-slideshow-item="next"></a>
-			</div> --}}
+			  
 		</div>
 	</div>
 	@if (!empty($productos->count()))
