@@ -65,6 +65,7 @@ class PaymentController extends Controller
 
         $sandbox = env('PAYPAL_SANDBOX');
         $url = 'https://www.'.$sandbox.'paypal.com/cgi-bin/webscr'.$queryString;
+		dd($url);
         return Redirect::to($url);
 
         // echo ('Location: https://www.'.$sandbox.'paypal.com/cgi-bin/webscr' .$queryString);

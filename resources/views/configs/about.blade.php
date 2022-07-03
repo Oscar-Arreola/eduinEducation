@@ -84,6 +84,16 @@
 						<img src="{{asset('/img/photos/nostrosgal/'.$fotos->image)}}" class="card-img-top" alt="{{$fotos->image}}">
 					</a>
 					@endif
+					<div class="card-body p-2">
+						<div class="text-center mb-1">
+							<small><label class="mb-0" for="titulo">Titulo</label></small>
+							<input type="text" name="titulo" id="titulo" class="form-control form-control-sm editarajax" data-id="{{$fotos->id}}" data-table="espacio" data-campo="titulo"  value="{{ $fotos->titulo }}">
+						</div>
+						<div class="text-center mb-1">
+							<small><label class="mb-0" for="subtitulo">Descripcion</label></small>
+							<textarea name="subtitulo" id="subtitulo" class="form-control form-control-sm editarajax" data-id="{{$fotos->id}}" data-table="espacio" data-campo="subtitulo"> {{ $fotos->subtitulo }}</textarea>
+						</div>
+					</div>
 				</div>
 			</div>
 		@endforeach

@@ -2,7 +2,7 @@
 	<ul class="custom-scrollbar">
 	<li class="logo-sn waves-effect py-3">
 			<div class="text-center">
-				<a href="#" class="pl-0">
+				<a href="{{route('admin.home')}}" class="pl-0">
 					<img class="img-fluid h-100" src="{{asset('img/design/logo_woz.png')}}">
 				</a>
 			</div>
@@ -61,7 +61,10 @@
 					<li>
 						<a href="{{ route('pedidos.index') }}" class="collapsible-header waves-effect {{ (request()->is('admin/pedidos')) ? 'active' : '' }}"><i class="w-fa fas fa-file-invoice-dollar"></i>Pedidos</a>
 					</li>
-					<li class="{{ (request()->is('admin/config')) ? 'active' : '' }}">
+					<li>
+						<a href="{{ route('pedidos.index') }}" class="collapsible-header waves-effect {{ (request()->is('admin/pedidos')) ? 'active' : '' }}"><i class="w-fa fas fa-file-invoice-dollar"></i>Pedidos</a>
+					</li>
+					{{-- <li class="{{ (request()->is('admin/config')) ? 'active' : '' }}">
 						<a class="collapsible-header waves-effect arrow-r">
 							<i class="fas fa-gavel"></i>
 							Subastas
@@ -77,19 +80,19 @@
 								</li>
 							</ul>
 						</div>
-					</li>
+					</li> --}}
 					{{-- <li>
 						<a href="{{ route('subastas.index') }}" class="collapsible-header waves-effect {{ (request()->is('admin/subastas')) ? 'active' : '' }}"> <i class="fas fa-gavel"></i>Subastas</a>
 					</li> --}}
 					<li>
 						<a href="{{ route('productos.index') }}" class="collapsible-header waves-effect {{ (request()->is('admin/productos')) ? 'active' : '' }}"><i class="fas fa-box-open"></i>Productos</a>
 					</li>
-					<li>
+					{{-- <li>
 						<a href="{{ route('config.space.index') }}" class="collapsible-header waves-effect {{ (request()->is('admin/config/spaces')) ? 'active' : '' }}"><i class="fas fa-couch"></i>Espacios</a>
-					</li>
-					<li>
+					</li> --}}
+					{{-- <li>
 						<a href="{{ route('colaboradores.index') }}" class="collapsible-header waves-effect {{ (request()->is('admin/colaboradores')) ? 'active' : '' }}"> <i class="fas fa-handshake"></i>Colaboradores</a>
-					</li>
+					</li> --}}
 					{{-- <li class="{{ (request()->is('admin/config')) ? 'active' : '' }}">
 						<a class="collapsible-header waves-effect arrow-r">
 							<i class="fas fa-handshake"></i>

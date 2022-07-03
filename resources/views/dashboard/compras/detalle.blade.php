@@ -24,14 +24,14 @@
 					<div class="">
 						<span class="text-muted">Email:</span> {{$pedido->usuario->email}}
 					</div>
-					<div class="">
+					{{-- <div class="">
 						<span class="text-muted">Telefono:</span> {{$pedido->usuario->telefono}}
-					</div>
+					</div> --}}
 				</div>
 			</div>
 		</div>
 		<div class="col-12 col-md-4 my-2">
-			<div class="card">
+			{{-- <div class="card">
 				<div class="card-body">
 					<h6 class="card-title text-center">Dirección de envio</h6>
 					<span class="text-muted">Calle: </span>{{$pedido->domicilio->calle}} #{{$pedido->domicilio->numext}} @if ($pedido->domicilio->numint) Int. {{$pedido->domicilio->numint}} @endif <br>
@@ -39,7 +39,7 @@
 					<span class="text-muted">Colonia: </span>{{$pedido->domicilio->colonia}} <span class="text-muted">CP:</span> {{$pedido->domicilio->cp}} <br>
 					<span class="text-muted">Municipio: </span>{{$pedido->domicilio->municipio}} <span class="text-muted">Estado:</span> {{$pedido->domicilio->estado}}
 				</div>
-			</div>
+			</div> --}}
 		</div>
 		<div class="col-12 col-md-4 my-2">
 			<div class="card">
@@ -104,17 +104,17 @@
 					  <tbody>
 					  	@foreach ($detalle as $detail)
 					  		<tr>
-						      	<th scope="row">{{$detail->producto->titulo_es}} [{{$detail->color->coltex->name}}]</th>
+						      	<th scope="row">{{$detail->producto->titulo_es}}{{--  [{{$detail->color->coltex->name}}] --}}</th>
 						      	<td class="text-center">{{$detail->cantidad}}</td>
 						      	<td class="text-center">${{$detail->producto->precio}}</td>
 						      	<td class="text-center">${{$detail->precio}}</td>
 						      	<td class="text-center">${{$detail->importe}}</td>
 					    	</tr>
 					  	@endforeach
-						  	<tr>
+						  {{-- 	<tr>
 						  		<td colspan="4">Envio</td>
 						      	<td class="text-center">${{$pedido->envio}}</td>
-						  	</tr>
+						  	</tr> --}}
 					   		<tr>
 					   			<td colspan="3"></td>
 						      	<td class="text-center">Total</td>

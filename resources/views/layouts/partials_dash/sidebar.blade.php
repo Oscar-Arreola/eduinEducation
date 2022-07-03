@@ -1,7 +1,9 @@
 <div class="sidebar-fixed position-fixed" style="z-index:2000;">
 
 	<a class="logo-wrapper waves-effect">
-		<img src="{{asset('img/design/logo.png')}}" class="img-fluid" alt="">
+	<a href="{{url('/')}}" >
+		<img src="{{asset('img/design/logo.png')}}" class="img-fluid" alt="" style="max-height: 60px">
+	</a>
 	</a>
 
 	<div class="list-group list-group-flush">

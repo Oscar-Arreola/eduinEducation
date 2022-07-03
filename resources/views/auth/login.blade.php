@@ -14,7 +14,7 @@
 @endif
 
 	<div class="uk-container uk-container-expand uk-margin-remove uk-padding">
-		<div class="uk-width-1-1 uk-margin-remove uk-padding" style="background:#6c6c6c;">
+		<div class="uk-width-1-1 uk-margin-remove uk-padding bg-secondary">
 
 			<div class="uk-width-1-1 mar-pad-r uk-grid-small" uk-grid>
 				<div class="uk-width-1-2@m uk-margin-remove uk-padding-large uk-first-column">
@@ -63,9 +63,9 @@
 											{{ __('Entrar') }}
 										</button>
 									</div>
-									<div class="col-md-12" style="padding-top:20px">
+									<div class="col-md-12 " style="padding-top:20px">
 										@if (Route::has('password.request'))
-										<a class="btn btn-link" href="{{ route('password.request') }}">
+										<a class="btn btn-link blanco" href="{{ route('password.request') }}">
 											{{ __('¿Olvidaste tu contraseña?') }}
 										</a>
 										@endif
@@ -181,7 +181,7 @@
 			</div> --}}
 								<div class="uk-width-expand@m uk-margin-remove uk-padding-large">
 									<div class="col-md-12 card-header text-center bold500 mar-pad-r txt-30 space4 blanco pad-15 uk-text-center">
-										SE PARTE DE GROPIUS
+										SE PARTE DE NOSOTROS
 										<br>
 										<a href="/register" class="btn btn-primary uk-margin-small txt-14 space4 blanco" style="border:solid 1px #fff; background-color:transparent;margin-top:30px!important;padding:8px 20px"> Registrarse</a>
 									</div>
@@ -258,5 +258,5 @@
 			</div>
 		</div>
 	</div>
-</div-->
+</div
 @endsection

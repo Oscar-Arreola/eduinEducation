@@ -38,17 +38,31 @@
 							</select>
 						</div>
 					</div>
-					<div class="form-group row text-center">
-						<div class="col-md">
-							<div class="form-group">
-								<label for="coti">Cotización</label>
-								<div class="custom-control custom-checkbox">
-									<input type="checkbox" name="coti" class="custom-control-input" id="coti">
-									<label class="custom-control-label" for="coti"></label>
+					<div class="form-group coti">
+						<div class="col-lg-12 col-md p-0">
+							<div class="row text-center">
+								<div class="col-md">
+									<label for="precio">Precio</label>
+									<input type="text" name="precio" id="precio" class="form-control" value="{{ old('precio',0)}}">
+								</div>
+								<div class="col-md">
+									<label for="descuento">Descuento <small class="text-muted">(Porcentaje)</small></label>
+									<input type="text" name="descuento" id="descuento" class="form-control" placeholder="%"  value="{{ old('descuento',0)}}">
+								</div>
+								<div class="col-md">
+									<div class="form-group">
+										<label for="coti">Cotización</label>
+										<div class="custom-control custom-checkbox">
+											<input type="checkbox" name="coti" class="custom-control-input" id="coti">
+											<label class="custom-control-label" for="coti"></label>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-md ">
+					</div>
+						
+					{{-- 	<div class="col-md ">
 							<div class=" text-center">
 								<label>Material a utilizar</label>
 								<div class="form-check form-check-inline custom-control custom-switch">
@@ -57,8 +71,8 @@
 									<label class="custom-control-label" for="texture">Textura</label>
 								</div>
 							</div>
-						</div>
-						<div class="col-md ">
+						</div> --}}
+						{{-- <div class="col-md ">
 							<div class=" text-center">
 								<label>Colaboración</label>
 								<select class="form-control custom-select" name="colaborador" id="colaborador">
@@ -68,31 +82,45 @@
 									@endforeach
 								</select>
 							</div>
-						</div>
-					</div>
-					<div class="form-group text-center">
+						</div> --}}
+				
+				{{-- 	<div class="form-group text-center">
 						<label for="min_descripcion_es">Descripción rápida</label>
 						<input type="text" name="min_descripcion_es" id="min_descripcion_es" class="form-control" value="{{old('min_descripcion_es')}}">
+					</div> --}}
+					<div class="form-group text-center">
+						<label for="url">URL</label>
+						<input type="text" name="url" id="url" class="form-control" value="">
 					</div>
 					<div class="form-group text-center">
 						<label for="descripcion_es">Descripción</label>
 						<textarea name="descripcion_es" id="descripcion_es" rows="10" class="texteditor form-control" style="resize:none;">{{old('descripcion_es')}}</textarea>
 					</div>
 					<div class="form-group text-center">
+						<label for="aprenderas">Aprendizaje</label>
+						<textarea name="aprenderas" id="aprenderas" rows="10" class="texteditor form-control" style="resize:none;">{{old('aprenderas')}}</textarea>
+					</div>
+					<div class="form-group text-center">
+						<label for="habilidades">Habilidades</label>
+						<textarea name="habilidades" id="habilidades" rows="10" class="texteditor form-control" style="resize:none;">{{old('habilidades')}}</textarea>
+					</div>
+					
+					<div class="form-group text-center" hidden>
 						<label for="coltexs">Colores / Texturas a utilizar</label>
 						<select name="coltexs[]" id="coltexs" class="form-control custom-select text-center" multiple>
-							<option selected disabled>Selecciona colores/texturas</option>
-							@foreach ($colors as $col)
+							<option  disabled>Selecciona colores/texturas</option>
+							<option selected class="colors" value="{{$colors[0]->id}}">{{$colors[0]->name}}</option>
+							{{-- @foreach ($colors as $col)
 								@if ($col->BoolTexture)
 									<option class="texture" value="{{$col->id}}">{{$col->name}}</option>
 								@else
-									<option class="colors" value="{{$col->id}}">{{$col->name}}</option>
+									
 								@endif
-							@endforeach
+							@endforeach --}}
 						</select>
 					</div>
 					<div class="form-group">
-						<div class="col-lg-12 col-md">
+						{{-- <div class="col-lg-12 col-md">
 							<div class="row text-center">
 								<div class="col-md">
 									<label for="med_alt">Alto</label>
@@ -123,21 +151,8 @@
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="form-group coti">
-						<div class="col-lg-12 col-md">
-							<div class="row text-center">
-								<div class="col-md">
-									<label for="precio">Precio</label>
-									<input type="text" name="precio" id="precio" class="form-control" value="{{ old('precio',0)}}">
-								</div>
-								<div class="col-md">
-									<label for="descuento">Descuento <small class="text-muted">(Porcentaje)</small></label>
-									<input type="text" name="descuento" id="descuento" class="form-control" placeholder="%"  value="{{ old('descuento',0)}}">
-								</div>
-							</div>
-						</div>
-					</div>
+					</div> --}}
+					
 					<div class="form-group text-center">
 						<button type="submit" class="btn btn-primary">Guardar</button>
 					</div>

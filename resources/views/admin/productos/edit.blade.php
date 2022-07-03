@@ -51,7 +51,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md ">
+						{{-- <div class="col-md ">
 							<div class=" text-center">
 								<label >Material a utilizar</label>
 								<div class="form-check form-check-inline custom-control custom-switch">
@@ -60,8 +60,8 @@
 									<label class="custom-control-label" for="texture">Textura</label>
 								</div>
 							</div>
-						</div>
-						<div class="col-md ">
+						</div> --}}
+						{{-- <div class="col-md ">
 							<div class=" text-center">
 								<label>Colaboración</label>
 								<select class="form-control custom-select" name="colaborador" id="colaborador">
@@ -72,17 +72,17 @@
 									<option value="0">Quitar colaboración</option>
 								</select>
 							</div>
-						</div>
+						</div> --}}
 					</div>
-					<div class="form-group text-center">
+					{{-- <div class="form-group text-center">
 						<label for="min_descripcion_es">Descripción rápida</label>
 						<input type="text" name="min_descripcion_es" id="min_descripcion_es" class="form-control" value="{{$product->min_descripcion_es}}">
-					</div>
+					</div> --}}
 					<div class="form-group text-center">
 						<label for="descripcion_es">Descripción</label>
 						<textarea name="descripcion_es" id="descripcion_es" rows="10" class="texteditor form-control" style="resize:none;">{{$product->descripcion_es}}</textarea>
 					</div>
-					<div class="form-group text-center">
+				{{-- 	<div class="form-group text-center">
 						<label for="coltexs">Colores / Texturas a utilizar</label>
 						<select name="coltexs[]" id="coltexs" class="form-control custom-select text-center" multiple>
 							<option disabled>Selecciona colores/texturas</option>
@@ -94,8 +94,8 @@
 								@endif
 							@endforeach
 						</select>
-					</div>
-					<div class="form-group">
+					</div> --}}
+				{{-- 	<div class="form-group">
 						<div class="col-lg-12 col-md">
 							<div class="row text-center">
 								<div class="col-md">
@@ -112,7 +112,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> --}}
 					<div class="form-group coti">
 						<div class="col-lg-12 col-md">
 							<div class="row text-center">

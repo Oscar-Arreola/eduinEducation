@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="uk-container uk-container-expand uk-margin-remove uk-padding">
-	<div class="uk-width-1-1 uk-margin-remove uk-padding" style="background:#6c6c6c;">
+	<div class="uk-width-1-1 uk-margin-remove uk-padding bg-secondary" >
 
 		<div class="uk-width-1-1 mar-pad-r uk-grid-small" uk-grid>
 			<div class="uk-width-1-2@m uk-margin-remove uk-padding-large uk-first-column">

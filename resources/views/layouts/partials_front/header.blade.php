@@ -36,33 +36,10 @@
 									Nosotros
 								</a>
 							</li>
-							<li class="uk-parent">
-								<a class="txt-16" href="#">Productos</a>
-								<ul class="uk-nav-sub" uk-accordion>
-									<li class="mar-pad-r" style="margin-top:0!important">
-										<a href="{{ route('front.productos') }}" class="uk-width-1-2 uk-flex uk-flex-left uk-padding-small uk-text-uppercase" style="color:#fff;">Tienda</a>
-									</li>
-									@foreach ($catzero as $categ)
-									<li class="mar-pad-r" style="margin-top:0!important">
-										<a class="uk-accordion-title uk-margin-remove space4 txt-30" href="#" style="padding:5px 15px;">{{$categ->nombre}}</a>
-										<div class="uk-accordion-content mar-pad-r  txt-14" style="">
-											<div class="uk-width-1-1 uk-margin-remove uk-grid-match" uk-grid style="">
-												@foreach ($categorias as $cat)
-													@if ($categ->id == $cat->parent)
-														<div class="uk-padding-right-small uk-margin-remove uk-text-left bold500" style="padding:3px 15px;color:#fff;">
-															<a class="uk-link-reset" href="{{url()->route('front.productos',$cat->slug)}}">
-																{{$cat->nombre}}
-															</a>
-														</div>
-													@endif
-												@endforeach
-											</div>
-										</div>
-									</li>
-									@endforeach
-								</ul>
-							</li>
 							<li class="uk-width-auto uk-margin-remove">
+								<a href="{{ route('front.productos') }}" class="uk-width-1-2 uk-flex uk-flex-left uk-padding-small" style="color:#fff;">Tienda</a>
+							</li>
+							{{-- <li class="uk-width-auto uk-margin-remove">
 								<a class="uk-link-reset mar-pad-r txt-16" href="{{url()->route('front.subastas')}}">
 									Miniaturas
 								</a>
@@ -76,7 +53,7 @@
 								<a class="uk-link-reset mar-pad-r txt-16" href="{{url()->route('front.colaboraciones')}}">
 									Colaboraciones
 								</a>
-							</li>
+							</li> --}}
 							<li class="uk-width-auto uk-margin-remove">
 								<a class="uk-link-reset mar-pad-r txt-16" href="{{url()->route('front.contact')}}">
 									Contacto
@@ -140,17 +117,17 @@
 								</a>
 							</div>
 						</div>
-						<div class="uk-width-auto uk-padding-small uk-margin-remove">
+					{{-- 	<div class="uk-width-auto uk-padding-small uk-margin-remove">
 							<div class="uk-flex uk-flex-center">
 								<a class="redes-contacto-txt" href="{{ $config->linkedin }}">
 									<span uk-icon="icon: linkedin; ratio:1" class="uk-icon">
 									</span>
 								</a>
 							</div>
-						</div>
+						</div> --}}
 					</div>
 
-					<div class="bold500 mar-pad-r txt-14 space4 uk-text-center pad-t-25" style="color:#000"> 2:
+					<div class="bold500 mar-pad-r txt-14 space4 uk-text-center pad-t-25" style="color:#000"> Telefono:
 						<a class="bold500 mar-pad-r txt-14 space4 uk-text-center uk-link-reset" href="tel:+{{ $config->telefono }}">{{ $config->telefono }}</a> </div>
 					<div class="bold500 mar-pad-r txt-14 space4 uk-text-center pad-t-25" style="color:#000"> WHATSAPP:
 						<a class="bold500 mar-pad-r txt-14 space4 uk-text-center uk-link-reset" href="tel:+{{ $config->telefono2 }}"> {{ $config->telefono2 }} </a></div>

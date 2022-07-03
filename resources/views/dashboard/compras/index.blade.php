@@ -74,7 +74,7 @@
 											</button>
 											<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 												<a class="dropdown-item" href="{{route('dash.compras.detalle', $item->uid)}}">Ver más</a>
-												<!--a class="dropdown-item" href="">Editar</a-->
+												<!--a class="dropdown-item" href="">Editar</a>
 												{{-- <button class="dropdown-item btndel" data-toggle="modal" data-target="#frameModalDel" data-id="{{$item->id}}">Eliminar</button> --}}
 											</div>
 										</div>

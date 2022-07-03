@@ -57,10 +57,11 @@ class ProductoController extends Controller
 				'sku' => 'unique:productos,sku',
 				'titulo_es' => 'required',
 				'categoria' => 'required',
-				'min_descripcion_es' => 'required',
+				'url' => 'required',
+				/* 'min_descripcion_es' => 'required', */
 				'descripcion_es' => 'required',
-				'coltexs' => 'required',
-				'med_alt' => 'numeric',
+			/* 	'coltexs' => 'required', */
+				'med_alt' => 'numeric',	
 				'med_anc' => 'numeric',
 				'med_lar' => 'numeric',
 				'precio' => 'required_if:coti,1',
@@ -82,20 +83,23 @@ class ProductoController extends Controller
 			$product->sku = $request->sku;
 			$product->titulo_es = $request->titulo_es;
 			$product->categoria = $request->categoria;
-			$product->min_descripcion_es = $request->min_descripcion_es;
+			/* $product->min_descripcion_es = $request->min_descripcion_es; */
 			$product->descripcion_es = $request->descripcion_es;
 			$product->coti = $request->coti;
 			$product->coti = (!empty($product->coti)) ? 1 : 0 ;
 			// $product->textura = (isset($request->texture)) ? 1 : 0 ;
 			$product->textura = (!empty($request->texture)) ? 1 : 0 ;
-			$product->med_alt = $request->med_alt;
+			/* $product->med_alt = $request->med_alt;
 			$product->med_anc = $request->med_anc;
-			$product->med_lar = $request->med_lar;
+			$product->med_lar = $request->med_lar; */
 			$product->precio = $request->precio;
 			$product->descuento = $request->descuento;
 			// $product->llave = $faker->numberBetween(100000, 9999999999);
 			$product->llave = random_int(100000, 9999999999);
-			$product->colaborador = $request->colaborador;
+		/* 	$product->colaborador = $request->colaborador; */
+			$product->url = $request->url;
+			$product->aprenderas = $request->aprenderas;
+			$product->habilidades = $request->habilidades;
 			$product->save();
 
 			foreach ($request->coltexs as $col) {
@@ -199,7 +203,7 @@ class ProductoController extends Controller
 			$product->med_lar = $request->med_lar;
 			$product->precio = $request->precio;
 			$product->descuento = $request->descuento;
-			$product->colaborador = $colabool;
+			/* $product->colaborador = $colabool; */
 			$product->save();
 
 			$reqcoltexs = collect([]);

@@ -18,7 +18,7 @@ Route::name('front.')->group(function(){
 	Route::get('subasta/{id}','FrontController@subasta')->name('subasta');
 	Route::get('nosotros','FrontController@aboutus')->name('aboutus');
 	Route::get('espacio/{id}','FrontController@espacio')->name('espacio');
-	Route::get('productos/{slug?}','FrontController@productos')->name('productos');
+	Route::get('productos/{cat?}','FrontController@productos')->name('productos');
 	Route::get('producto/{id}','FrontController@producto')->name('producto');
 	Route::get('contacto','FrontController@contact')->name('contact');
 	Route::post('contacto','FrontController@mailcontact')->name('mailcontact');

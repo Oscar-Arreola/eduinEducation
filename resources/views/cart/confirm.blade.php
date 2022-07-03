@@ -24,11 +24,11 @@
 					<div class="uk-card uk-card-default  uk-card-body">
 						<h3 class="uk-card-title uk-text-center uk-text-danger">Mis datos</h3>
 						<small class="">Nombre:</small> <span class=""> {{ $user->name }} {{ $user->lastname }}</span> <br>
-						<small class="">Telefono</small> <span class=""> {{ $user->telefono }} </span> <br>
+						{{-- <small class="">Telefono</small> <span class=""> {{ $user->telefono }} </span> <br> --}}
 						<small class="">Email:</small> <span class=""> {{ $user->email }} </span> <br>
 					</div>
 				</div>
-				<div>
+				{{-- <div>
 					<div class="uk-card uk-card-default  uk-card-body">
 						<h3 class="uk-card-title uk-text-center uk-text-danger">Domicilio de envio</h3>
 						<select name="domicilio" id="domicilio" class="uk-select uk-text-capitalize">
@@ -41,7 +41,7 @@
                             <button class="uk-button uk-width-1-1" id="addDom">Agregar Dirección</button>
                         </div>
 					</div>
-				</div>
+				</div> --}}
 				{{-- <div>
 					<div class="uk-card uk-card-default  uk-card-body">
 						<h3 class="uk-card-title uk-text-center uk-text-danger">Factura</h3>
@@ -55,8 +55,8 @@
 					<table class="uk-table uk-table-striped uk-table-hover uk-table-middle uk-table-responsive uk-text-center">
 						<thead>
 							<tr>
-								<th>Producto</th>
-								<th width="70px">Color</th>
+								<th colspan="2">Producto</th>
+								{{-- <th width="70px">Color</th> --}}
 								<th width="100px">Cantidad</th>
 								<th class="uk-text-right" width="100px">Precio de lista</th>
 								<th class="uk-text-right" width="100px">Precio final</th>
@@ -71,14 +71,14 @@
 										<img src="img/design/camara.jpg" uk-cover="" class="uk-cover" style="height: 40px; width: 40px;">
 									</div>
 								</td> --}}
-								<td class="uk-text-left@m">
+								<td colspan="2" class="uk-text-left@m">
 									<a href="#pics" uk-scroll=""> {{$item->name}} </a>
 								</td>
-								<td>
+							{{-- 	<td>
 									<span class="uk-text-capitalize">
 										{{ $item->attributes->version->coltex->name}}
 									</span>
-								</td>
+								</td> --}}
 								<td class="uk-text-right@m">
 									{{ $item->quantity }}
 								</td>
@@ -326,10 +326,10 @@ $(document).ready(function() {
 		$('#cart').val(cart);
 		// console.log(valor);
 
-		if (domi == null) {
+		/*if (domi == null) {
 			alert('Seleccione un domicilio de envio');
 			e.preventDefault();
-		}
+		}*/
 	});
 
 	$('#addDom').click(function(e) {

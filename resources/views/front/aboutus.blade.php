@@ -6,62 +6,136 @@
 {{-- @section('styleExtras')@endsection --}}
 @section('content')
 
-	<div class="uk-container uk-container-expand uk-margin-remove uk-padding-remove uk-grid-match uk-grid" uk-grid>
-		<div class="uk-height-1-1 uk-width-1-2@m uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light height-560-nosotros uk-first-column" data-src="{{ asset('/img/photos/photos/'.$config->aboutimg) }}" uk-img="" style="z-index: 1; background-image: url({{asset('img/design/banner1.jpg')}});"> </div>
-		<div class="uk-width-1-2@m mar-pad-r uk-flex uk-flex-center uk-flex-middle height-560" style="background-color:#6c6c6c;">
-			<div class="uk-width-2-3 uk-margin-remove uk-padding-remove">
-				<div class="uk-width-1-1 mar-pad-r space4 txt-30 uk-flex uk-flex-center mar-pad-r blanco"> NOSOTROS </div>
-				<div class="pad-5 uk-flex uk-flex-center uk-flex-middle">
-					<hr class="mar-pad-r hr-20-b">
+	<div class="uk-container-expand padding-v-30" style="padding-top: 6em; background: #0f4476;" >
+		<div class="uk-container">
+			<div class=" uk-margin-remove uk-grid uk-child-width-1-1  uk-child-width-1-2@m padding-v-50">
+				<div class="uk-flex uk-flex-center uk-flex-middle uk-padding-remove" >
+					<img class="uk-border-circle" src="{{ asset('/img/photos/photos/'.$config->aboutimg) }}"  style="width: 20em; height: 20em;object-fit: cover;" >
 				</div>
-				<div class="mar-pad-r uk-text-center txt-14 blanco">
-					{{ $config->about }}
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="pad-25-0"></div>
-	<div class="uk-container uk-container-expand uk-margin-remove">
-		<div class="uk-width-1-1 mar-pad-r uk-grid-small uk-flex uk-flex-center uk-grid" uk-grid>
-			<div class="uk-width-3-5@m uk-margin-remove uk-padding-remove">
-				<div class="uk-width-1-1 space4 txt-30 uk-flex uk-flex-center pad-15 title"> CONCEPTOS </div>
-				<div class="uk-width-1-1 mar-pad-r uk-grid-small uk-grid uk-flex uk-flex-right" uk-grid
-				uk-scrollspy="cls: uk-animation-fade; target: .listconceptos; delay: 500; repeat: true">
-					<!-- limite de 9 fotos -->
-					@foreach ($images as $galeria)
-					<div class="uk-width-1-2@s uk-width-1-3@m uk-margin-remove uk-padding-remove uk-inline-clip uk-transition-toggle border-blaco listconceptos" tabindex="0">
-						<a class="mar-pad-r uk-link-reset" href="#modal-container{{ $galeria->id }}" uk-toggle >
-							<div class="uk-cover-container height-index-espacio">
-							    <img src="{{ asset('/img/photos/nostrosgal/'.$galeria->image) }}" alt="" uk-cover>
-							</div>
-					        <div class="uk-margin-remove uk-padding-remove uk-transition-fade uk-position-cover uk-position-middle uk-overlay uk-overlay-default uk-flex uk-flex-center uk-flex-middle uk-height-middle" style="">
-					        	<a class="uk-link-reset mar-pad-r" href="#modal-container{{ $galeria->id }}" uk-toggle >
-							        <div>
-						                <div class="uk-h4 uk-margin-remove txt-16 gris space4 uk-text-center">
-						                	 VER <br> FOTO
-						                </div>
-						            </div>
-					        	</a>
-					        </div>
-				        </a>
-			        </div>
-		        	<div id="modal-container{{ $galeria->id }}" class="uk-modal-container" uk-modal>
-					    <div class="uk-modal-dialog uk-modal-body" style="background-color:transparent!important">
-					        <button class="uk-modal-close-default" type="button" uk-close
-					        style="background-color:#333;border-radius:100%;border:solid 1px #fff;color:#fff;font-size:40px;height:40px;width:40px"></button>
-					        <div class="uk-flex uk-flex-center uk-flex-middle" style="height:80vh">
-							    <img src="{{ asset('/img/photos/nostrosgal/'.$galeria->image) }}" alt=""  style="max-height:80vh">
-							</div>
-					    </div>
+				<div>
+					<div class="uk-text-left">
+						<div class="titulo-white uk-text-uppercase">Edwin rodriguez</div>
+						<div class="titulo-cian uk-text-uppercase">consultancy sas</div>
+						<div class="border-cyan margin-v-10" style="width: 70%"></div>
+						<div class="color-blanco">{{$config->about}}</div>
 					</div>
-			        @endforeach
-
-
 				</div>
 			</div>
 		</div>
 	</div>
+	
+	<div class="uk-container uk-container-expand  bg-secondary" style="padding-top: 5em; padding-bottom: 5em">
+		<div class="uk-container">
+			<div class=" uk-margin-remove uk-grid uk-child-width-1-1  uk-child-width-1-3@m">
+				<div class="uk-padding">
+					<div class="uk-text-left">
+						<img class="uk-border-circle" src="/img/design/logo.png"  style="height: 120px;width: 120px;" alt="Border circle">
+					</div>
+					<div class="titulo-cian uk-text-uppercase">
+						habilidades
+					</div>
+					<div class="border-cyan margin-v-10" style="width: 70%"></div>
+					<div class="color-blanco uk-text-justify">{{$config->about}}</div>
+				</div>
+				<div class="uk-padding">
+					<div class="uk-text-left">
+						<img class="uk-border-circle" src="/img/design/logo.png"  style="height: 120px;width: 120px;" alt="Border circle">
+					</div>
+					<div class="titulo-cian uk-text-uppercase">
+						esperiencias
+					</div>
+					<div class="border-cyan margin-v-10" style="width: 70%"></div>
+					<div class="color-blanco uk-text-justify">{{$config->about}}</div>
+				</div>
+				<div class="uk-padding">
+					<div class="uk-text-left">
+						<img class="uk-border-circle" src="/img/design/logo.png"  style="height: 120px;width: 120px;" alt="Border circle">
+					</div>
+					<div class="titulo-cian uk-text-uppercase">
+						manifiesto
+					</div>
+					<div class="border-cyan margin-v-10" style="width: 70%"></div>
+					<div class="color-blanco uk-text-justify">{{$config->about}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class=" uk-container-expand bg-primary" style="padding-top: 4em; padding-bottom: 4em">
+		<div class="uk-container">
+				<div class="uk-text-center">
+					<div class="color-blanco uk-text-uppercase" style="font-size: 3em;">sus opiniones</div>
+				</div>
+				<div class="uk-flex uk-flex-center margin-v-10">
+					<div class="border-card" style="width: 200px"></div>
+				</div>
+				<div class="uk-flex uk-flex-center">
+					<div style="width: 50%" class="uk-text-center color-secondary">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					</div>
+				</div>
+				<div class="">
+					<div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
+
+						<ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-4@m uk-grid">
+							
+
+							@for ($i = 0; $i < 4; $i++)
+							<li>
+								<div class="uk-padding-small">
+									<div class="uk-text-center margin-v-10">
+										<img class="uk-border-circle" src="/img/design/logo.png"  style="height: 120px;width: 120px;" alt="Border circle">
+									</div>
+									<div class="color-blanco uk-text-center uk-text-uppercase">
+										sara lara
+									</div>
+									<div class="border-card margin-v-10"></div>
+									<div class="color-blanco uk-text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+								</div>
+							</li>
+							@endfor
+							
+						</ul>
+
+						<a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+						<a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+
+				
+					</div>
+				</div>
+
+		</div>
+	</div>
+
+	<div class=" uk-container-expand bg-secondary" style="padding-top: 4em; padding-bottom: 4em">
+		<div class="uk-container">
+			<div class="uk-text-center">
+				<div class="color-blanco uk-text-uppercase" style="font-size: 3em;">¿por qué nosotros?</div>
+			</div>
+			<div class="uk-flex uk-flex-center margin-v-10">
+				<div class="border-cyan" style="width: 200px"></div>
+			</div>
+			<div>
+				<div class=" uk-margin-remove uk-grid uk-child-width-1-1  uk-child-width-1-3@m">
+					@foreach ($espacio as $esp)
+						
+				
+						<div class="uk-padding">
+							<div class="uk-text-center margin-v-10">
+								<img class="uk-border-circle" src="{{ asset('img/photos/espacios/'.$esp->image)}}"  style="height: 70px;width: 70px;" alt="Border circle">
+							</div>
+							<div class="color-blanco uk-text-center uk-text-uppercase">
+								{{$esp->titulo}}
+							</div>
+							<div class="border-cyan margin-v-10"></div>
+							<div class="color-blanco uk-text-left">  {{$esp->subtitulo}}</div>
+						</div>
+						@endforeach
+				</div>
+			</div>
+		</div>
+	</div>
+
 
 
 

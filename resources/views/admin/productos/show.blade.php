@@ -43,7 +43,7 @@
 
 				@endif --}}
 			</div>
-			@if ($product->colaborador)
+			{{-- @if ($product->colaborador)
 			<div class="form-group">
 				<span class="font-weight-bold">Colaborador: </span>
 				@foreach ($catCol as $colabs)
@@ -52,14 +52,77 @@
 					@endif
 				@endforeach
 			</div>
-			@endif
-			<div class="form-group">
+			@endif --}}
+			{{-- <div class="form-group">
 				<span class="font-weight-bold">Descripción rápida:</span> <span class=""> {{$product->min_descripcion_es}} </span>
+			</div> --}}
+			<div class="form-group">
+				<span class="font-weight-bold">URL:</span>  <span class="">{{$product->url}} </span>
 			</div>
 			<div class="form-group">
 				<span class="font-weight-bold">Descripción:</span>  <span class="">{!!$product->descripcion_es!!} </span>
 			</div>
+			<div class="form-group">
+				<span class="font-weight-bold">Aprendizaje:</span>  <span class="">{!!$product->aprenderas!!} </span>
+			</div>
+			<div class="form-group">
+				<span class="font-weight-bold">Habilidades:</span>  <span class="">{!!$product->habilidades!!} </span>
+			</div>
 		</div>
+	</div>
+	<div class="row">
+		{{-- {{$product->colors}} --}}
+		@foreach ($product->colors as $col)
+			{{-- <div class="col-12 col-md-4">
+				<div class="card mt-3">
+					<form action="{{ route('productos.version.store',$col->id) }}" id="fphoto" class="card-body text-center" method="post" enctype="multipart/form-data">
+						<h5 class="card-title">{{$col->coltex->name}}</h5>
+						@csrf
+						<input type="hidden" name="version" value="{{$col->id}}">
+						<input type="file" name="foto" id="foto" class="dropify" data-allowed-file-extensions="png jpg jpeg">
+						<input type="submit" value="Guardar" class="btn btn-primary mt-2">
+					</form>
+				</div>
+			</div> --}}
+			<div class="col-12 col-md-8">
+				<div class="card mt-3">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-12 col-md">
+								{{-- <h5 class="card-title">{{$col->coltex->name}}</h5> --}}
+								<h5 class="card-title">Existencias</h5>
+							</div>
+							<div class="col-12 col-md">
+								<div class="form-group row">
+								{{-- 	<div class="col text-right">
+										<label class="" for="">Existencia</label>
+									</div> --}}
+									<div class="col">
+										<input type="text" class="form-control editarajax" data-id="{{$col->id}}" data-table="ProductoVersion" data-campo="existencia" value="{{$col->existencia}}">
+									</div>
+								</div>
+							</div>
+						</div>
+						{{-- <div class="row">
+							@foreach ($col->photos as $photo)
+							<div class="col-12 col-md-3 col-lg-3 my-2 my-md-1 p-2" data-card="{{$photo->id}}">
+								<div class="card">
+									<div class="d-flex justify-content-end">
+										<button class="btn btn-sm bg-danger position-absolute text-center text-white" type="button" data-toggle="modal" data-target="#ModalDelVer" data-id="{{$photo->id}}" style="z-index: 2;">
+											<i class="fa fa-trash-alt versions"></i>
+										</button>
+									</div>
+									<a href="{{asset('img/photos/productos/'.$photo->image)}}" target="_blank">
+										<img src="{{asset('img/photos/productos/'.$photo->image)}}" class="card-img-top" alt="{{$photo->image}}">
+									</a>
+								</div>
+							</div>
+							@endforeach
+						</div> --}}
+					</div>
+				</div>
+			</div>
+		@endforeach
 	</div>
 	<div class="">
 		<div class="card mt-3">
@@ -80,7 +143,9 @@
 	</div>
 	<div class="">
 		<div class="card mt-3">
+	
 			<form action="{{ route('productos.pic.store',$product->id) }}" id="fphoto" class="card-body text-center" method="post" enctype="multipart/form-data">
+				<h5 class="card-title">Fotos</h5>
 				@csrf
 				<input type="hidden" name="producto" value="{{$product->id}}">
 				<input type="file" name="foto" id="foto" class="dropify" data-allowed-file-extensions="png jpg jpeg">
@@ -126,59 +191,7 @@
 			@endforeach
 		</div>
 	</div> --}}
-	<div class="row">
-		{{-- {{$product->colors}} --}}
-	@foreach ($product->colors as $col)
-		<div class="col-12 col-md-4">
-			<div class="card mt-3">
-				<form action="{{ route('productos.version.store',$col->id) }}" id="fphoto" class="card-body text-center" method="post" enctype="multipart/form-data">
-					<h5 class="card-title">{{$col->coltex->name}}</h5>
-					@csrf
-					<input type="hidden" name="version" value="{{$col->id}}">
-					<input type="file" name="foto" id="foto" class="dropify" data-allowed-file-extensions="png jpg jpeg">
-					<input type="submit" value="Guardar" class="btn btn-primary mt-2">
-				</form>
-			</div>
-		</div>
-		<div class="col-12 col-md-8">
-			<div class="card mt-3">
-				<div class="card-body">
-					<div class="row">
-						<div class="col-12 col-md">
-							<h5 class="card-title">{{$col->coltex->name}}</h5>
-						</div>
-						<div class="col-12 col-md">
-							<div class="form-group row">
-								<div class="col text-right">
-									<label class="" for="">Existencia</label>
-								</div>
-								<div class="col">
-									<input type="text" class="form-control editarajax" data-id="{{$col->id}}" data-table="ProductoVersion" data-campo="existencia" value="{{$col->existencia}}">
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						@foreach ($col->photos as $photo)
-						<div class="col-12 col-md-3 col-lg-3 my-2 my-md-1 p-2" data-card="{{$photo->id}}">
-							<div class="card">
-								<div class="d-flex justify-content-end">
-									<button class="btn btn-sm bg-danger position-absolute text-center text-white" type="button" data-toggle="modal" data-target="#ModalDelVer" data-id="{{$photo->id}}" style="z-index: 2;">
-										<i class="fa fa-trash-alt versions"></i>
-									</button>
-								</div>
-								<a href="{{asset('img/photos/productos/'.$photo->image)}}" target="_blank">
-									<img src="{{asset('img/photos/productos/'.$photo->image)}}" class="card-img-top" alt="{{$photo->image}}">
-								</a>
-							</div>
-						</div>
-						@endforeach
-					</div>
-				</div>
-			</div>
-		</div>
-	@endforeach
-	</div>
+	
 
 	<div class="modal fade bottom" id="ModalDel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-frame modal-top" role="document">

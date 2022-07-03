@@ -6,102 +6,55 @@
 {{-- @section('styleExtras')@endsection --}}
 
 @section('content')
-	<div class="uk-container uk-container-expand uk-margin-remove uk-padding">
-		<div class="uk-width-1-1 uk-margin-remove uk-padding" style="background:#6c6c6c;">
-			<div class="uk-flex uk-flex-center">
-				<div class="uk-width-1-2 uk-margin-remove">
-					<div class="bold500 mar-pad-r txt-30 space4 blanco pad-15 uk-text-center"> CONTÁCTANOS </div>
-					<div class="uk-width-1-1 pad-5 uk-flex uk-flex-center uk-flex-middle">
-						<hr class="mar-pad-r hr-4-b">
-					</div>
-					<div class="bold500 mar-pad-r txt-14 blanco pad-15 uk-text-center">
-						{{ $elementos[0]->texto }}
-					</div>
-					<div class="uk-width-1-1 pad-5 uk-flex uk-flex-center uk-flex-middle">
-						<i class="far fa-envelope" style="font-weight:100;font-size:40px;color:#fff"></i>
-					</div>
-					<div class="uk-width-1-1 pad-5 uk-flex uk-flex-center uk-flex-middle">
-						<hr class="mar-pad-r hr-4-b">
-					</div>
+	<div class="uk-container-expand" style="padding-top: 100px">
+		<div class="uk-container" style="position: relative; z-index: 2">
+			<div class="uk-text-center">
+				<i class="far fa-envelope uk-border-circle borde-sec color-primary" style="font-weight:100;font-size:3em; padding:0.5em;"></i>
+			</div>
+			<div class="uk-text-center">
+				<div class="color-primary uk-text-uppercase" style="font-size: 3em; font-weight: bold">¡HOLA!</div>
+			</div>
+			<div class="uk-flex uk-flex-center color-black padding-v-20">
+				<div style="width: 50%" class="uk-text-center">
+					{{$elementos[0]->texto}}
 				</div>
 			</div>
-			<div class="uk-width-1-1 mar-pad-r uk-grid-small" uk-grid>
-				<div class="uk-width-1-2@m uk-margin-remove uk-padding-large uk-first-column">
-					<form action="{{ route('front.mailcontact') }}" class="uk-text-center" method="post">
-						@csrf
-						<input class="mar-pad-r input-contacto" type="text" name="nombre" placeholder="NOMBRE">
-						<input class="mar-pad-r input-contacto" type="text" name="correo" placeholder="CORREO">
-						<input class="mar-pad-r input-contacto" type="text" name="whatsapp" placeholder="WHATSAPP">
-						<input class="mar-pad-r input-contacto" type="text" name="mensaje" placeholder="MENSAJE">
-						<button class="uk-margin-small txt-14 space4 blanco" style="border:solid 1px #fff; background-color:transparent;margin-top:30px!important;padding:8px 20px;cursor:pointer;"> ENVIAR</button>
-					</form>
-					<div class="uk-width-1-1 pad-0-25 uk-grid-match uk-grid" uk-grid="">
-						<div class="uk-width-auto uk-padding-small uk-margin-remove uk-first-column">
-							<div class="uk-flex uk-flex-center redes-contacto">
-								<a class="redes-contacto-txt" href="wa.me/52{{$config->telefono}}">
-									<span uk-icon="icon: whatsapp; ratio: .9" class="uk-icon"></span>
-								</a>
-							</div>
-						</div>
-						<div class="uk-width-auto uk-padding-small uk-margin-remove">
-							<div class="uk-flex uk-flex-center redes-contacto">
-								<a class="redes-contacto-txt" href="{{ $config->facebook }}">
-									<span uk-icon="icon: facebook; ratio: .9" class="uk-icon"></span>
-								</a>
-							</div>
-						</div>
-						<div class="uk-width-auto uk-padding-small uk-margin-remove">
-							<div class="uk-flex uk-flex-center redes-contacto">
-								<a class="redes-contacto-txt" href="{{ $config->instagram }}">
-									<span uk-icon="icon: instagram; ratio: .9" class="uk-icon">
-									</span>
-								</a>
-							</div>
-						</div>
-						<div class="uk-width-auto uk-padding-small uk-margin-remove">
-							<div class="uk-flex uk-flex-center redes-contacto">
-								<a class="redes-contacto-txt" href="{{ $config->youtube }}">
-									<span uk-icon="icon: youtube; ratio: .9" class="uk-icon">
-									</span>
-								</a>
-							</div>
-						</div>
-						{{-- <div class="uk-width-auto uk-padding-small uk-margin-remove">
-							<div class="uk-flex uk-flex-center redes-contacto">
-								<a class="redes-contacto-txt" href="{{ $config->linkedin }}">
-									<span uk-icon="icon: linkedin; ratio: .9" class="uk-icon">
-									</span>
-								</a>
-							</div>
-						</div> --}}
-					</div>
+			<div class="uk-text-center padding-v-20 color-secondary uk-text-uppercase uk-text-bold txt-30" >
+					Contactanos
+			</div>
+		</div>
+	</div>
 
-					<div class="bold500 mar-pad-r txt-14 space4 blanco uk-text-left pad-t-25"> TELÉFONO:
-						<a class="bold500 mar-pad-r txt-14 space4 blanco uk-text-left" href="tel:+{{ $config->telefono }}">{{ $config->telefono }}</a> </div>
-					<div class="bold500 mar-pad-r txt-14 space4 blanco uk-text-left"> WHATSAPP:
-						<a class="bold500 mar-pad-r txt-14 space4 blanco uk-text-left" href="https://wa.me/52{{ $config->telefono2 }}"> {{ $config->telefono2 }} </a></div>
-				</div>
-
-				<hr class="mar-pad-r uk-divider-vertical" style="width:1px;height:auto;border-left: 1px solid #fff;">
-
-                <div class="uk-width-expand@m uk-margin-remove uk-padding-large">
-					{{-- <div class="bold500 mar-pad-r txt-14 space4 blanco uk-text-left"> SUCURSALES </div> --}}
-
-					<div class="bold500 mar-pad-r txt-14 blanco uk-text-left direccion" uk-scrollspy="cls: uk-animation-fade; target: .sucursales; delay: 500; repeat: false">
-						@foreach ($sucursal as $suc)
+	<div class="uk-container-expand bg-primary" >
+		<div class="uk-container uk-padding">
+			<div class="uk-flex uk-flex-center">
+				<form action="{{ route('front.mailcontact') }}" class="uk-text-center uk-width-1-1 uk-width-1-3@m" method="post">
+					@csrf
+					<input class="mar-pad-r input-contacto" type="text" name="nombre" placeholder="NOMBRE">
+					<input class="mar-pad-r input-contacto" type="text" name="correo" placeholder="CORREO">
+					<input class="mar-pad-r input-contacto" type="text" name="whatsapp" placeholder="WHATSAPP">
+					<input class="mar-pad-r input-contacto" type="text" name="mensaje" placeholder="MENSAJE">
+					<button class="uk-margin-small txt-14 space4 blanco" style="border:solid 1px #fff; background-color:transparent;margin-top:30px!important;padding:8px 20px;cursor:pointer;"> ENVIAR</button>
+				</form>
+			</div>
+			<div class="uk-flex uk-flex-right padding-v-20">
+				@foreach ($sucursal as $suc)
 						<div class="pad-5 sucursales">
-							<span style="text-decoration:underline;"> <span uk-icon="icon:location; ratio:.8"></span>  {!! $suc->nombre !!}</span>
-							<div class="txt-14 blanco uk-margin-remove uk-grid-small" uk-grid style="padding:1px 0">
-								<div uk-icon="icon:receiver; ratio:.7"></div> &nbsp; Teléfono:
+						{{-- 	<span style="text-decoration:underline;"> <span uk-icon="icon:location; ratio:.8"></span>  {!! $suc->nombre !!}</span> --}}
+							<div class="txt-14 blanco uk-margin-remove uk-grid-small uk-flex uk-flex-right" uk-grid style="padding:1px 0">
+								 &nbsp; Teléfono:
 								<div><a class="txt-14 blanco" href="tel:{!! $suc->tel !!}"> {!! $suc->tel !!} </a> </div>
+								<div uk-icon="icon:receiver; ratio:.7"></div>
 							</div>
-							<div class="txt-14 blanco uk-margin-remove uk-grid-small" uk-grid style="padding:2px 0">
-								<div uk-icon="icon:mail; ratio:.7"></div>&nbsp; Email:
+							<div class="txt-14 blanco uk-margin-remove uk-grid-small uk-flex uk-flex-right" uk-grid style="padding:2px 0">
+								&nbsp; Email:
 								<div> <a class="txt-14 blanco" href="mailto:{!! $suc->mail !!}"> {!! $suc->mail !!} </a> </div>
+								<div uk-icon="icon:mail; ratio:.7"></div>
 							</div>
-							<div class="txt-14 blanco uk-margin-remove uk-grid-small" uk-grid style="padding:2px 0">
-								<div uk-icon="icon:home; ratio:.7"></div>&nbsp; Dirección:
+							<div class="txt-14 blanco uk-margin-remove uk-grid-small uk-flex uk-flex-right" uk-grid style="padding:2px 0">
+								&nbsp; Dirección:
 								<div> {!! $suc->direccion !!} </div>
+								<div uk-icon="icon:home; ratio:.7"></div>
 							</div>
 							{{-- <div class="txt-14 blanco uk-margin-remove uk-grid-small" uk-grid style="padding:2px 0">
 								<div uk-icon="icon:bookmark; ratio:.7"></div>&nbsp;:
@@ -111,11 +64,15 @@
 							</div>
 						</div>
 						@endforeach
-					</div>
-				</div>
 			</div>
 		</div>
+
+		<div>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7911.384704724488!2d-103.39672164971152!3d20.64204395964631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ae0ed241a9bb%3A0xbb4c3906c38265fd!2sWozial%20Marketing%20Lovers!5e0!3m2!1sen!2smx!4v1656450122692!5m2!1sen!2smx" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
+		
 	</div>
+
 
 @endsection
 @section('jsLibExtras2')

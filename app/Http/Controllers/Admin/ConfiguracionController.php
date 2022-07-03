@@ -31,12 +31,11 @@ class ConfiguracionController extends Controller
 				// array('icon' => 'fas fa-arrows-alt', 'route' => 'config.size.index', 'text' => 'Tamaños'),
 				array('icon' => 'fas fa-question', 'route' => 'config.faq.index', 'text' => 'FAQ'),
 				array('icon' => 'fas fa-images', 'route' => 'config.slider.index', 'text' => 'Sliders'),
-				array('icon' => 'far fa-images', 'route' => 'config.subastagal', 'text' => 'Sliders Subasta'),
+				array('icon' => 'far fa-images', 'route' => 'config.subastagal', 'text' => 'Sliders clientes'),
 				array('icon' => 'fas fa-user-tie', 'route' => 'config.about', 'text' => 'Nosotros'),
 				array('icon' => 'fas fa-shield-alt', 'route' => 'config.politica.index', 'text' => 'Politicas'),
-				// array('icon' => 'fas fa-couch', 'route' => 'config.space.index', 'text' => 'Espacios'),
-				array('icon' => 'fab fa-buromobelexperte', 'route' => 'config.seccion.index', 'text' => 'Secciones'),
-				// array('icon' => 'fas fa-quote-right', 'route' => 'config.textos', 'text' => 'Textos'),
+				array('icon' => 'fas fa-couch', 'route' => 'config.space.index', 'text' => 'Por que nosotros'),
+				array('icon' => 'fas fa-quote-right', 'route' => 'config.textos', 'text' => 'Textos'),
 				array('icon' => 'fas fa-city', 'route' => 'config.sucursal.index', 'text' => 'Sucursal'),
 
 			);

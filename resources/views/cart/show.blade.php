@@ -22,8 +22,8 @@
 						<thead>
 							<tr>
 								<th width="50px"></th>
-								<th>Producto</th>
-								<th width="70px">Color</th>
+								<th colspan="2">Producto</th>
+								{{-- <th width="70px">Color</th> --}}
 								<th width="100px">Cantidad</th>
 								<th class="" width="100px">Precio de lista</th>
 								<th class="" width="100px">Precio final</th>
@@ -50,14 +50,14 @@
 										<img src="img/design/camara.jpg" uk-cover="" class="uk-cover" style="height: 40px; width: 40px;">
 									</div>
 								</td> --}}
-								<td class="uk-text-left@m">
+								<td colspan="2" class="uk-text-left@m">
 									<a href="#pics" uk-scroll=""> {{$item->name}} </a>
 								</td>
-								<td>
+								{{-- <td>
 									<span class="uk-text-capitalize">
 										{{ $item->attributes->version->coltex->name}}
 									</span>
-								</td>
+								</td> --}}
 								<td class="uk-text-right@m">
 									<input type="number" name="cantidad" value="{{$item->quantity}}" min="1" data-key="{{$item->id}}" class="cantidad uk-input uk-form-width-small input-number uk-text-right" tabindex="10">
 								</td>

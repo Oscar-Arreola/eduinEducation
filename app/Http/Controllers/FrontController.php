@@ -75,28 +75,10 @@ class FrontController extends Controller
 			}
 
 			$sliders = Carrusel::orderBy('orden', 'ASC')->get();
+			$clientes=GaleriaSubasta::orderBy('orden', 'asc')->get();
 
-			/*foreach ($sliders as $sli) {
-				if ($sli->video) {
-					if (Str::contains($sli->video, 'v=')) {
-						$pos=strpos($sli->video, 'v');
-						$videoPhoto=substr($sli->video, ($pos+2));
-					}
 
-					if (Str::contains($sli->video, 'youtu.be')) {
-						$pos=strrpos($sli->video, '/');
-						$videoPhoto=substr($sli->video, ($pos+1));
-					}
-
-					$sli->video = [
-						'url' => $sli->video,
-						'idVideo' => $videoPhoto
-					];
-				}
-			}
-			$this->debug($sliders);*/
-
-			return view('front.index',compact('subasta','productos','sliders','espacios', 'elementos'));
+			return view('front.index',compact('subasta','productos','sliders','espacios', 'elementos', 'clientes'));
 
 		}
 
@@ -227,8 +209,9 @@ class FrontController extends Controller
 		 */
 		public function aboutus(){
 			$images = Nosotrosgaleria::all();
+			$espacio = Espacio::all();
 
-			return view('front.aboutus',compact('images'));
+			return view('front.aboutus',compact('images', 'espacio'));
 		}
 
 		/**
@@ -237,7 +220,7 @@ class FrontController extends Controller
 		 * @param  int  $id
 		 * @return \Illuminate\Http\Response
 		 */
-		public function productos(Request $request, $slug = null){
+		public function productos(Request $request, $cat = null){
 			if (!session()->has('cart_id')) {
 				session(['cart_id' => rand(00000,99999)]);
 			}
@@ -245,12 +228,12 @@ class FrontController extends Controller
 			$cats = Categoria::where('parent',0)->get();
 			$catsall = Categoria::all();
 
-			$slugCat = (!empty($slug)) ? $slug : null ;
+			$slugCat = (!empty($request->cat)) ? $request->cat : null ;
 			$productos = Producto::where('activo',1);
 
 
 			if (!empty($slugCat)) {
-				$catProd = Categoria::where('slug',$slug)->get()->first();
+				$catProd = Categoria::where('slug',$slugCat)->get()->first();
 				// $productos = $productos->where('categoria',$catProd->id);
 				$productos = $productos->categoria($catProd->id);
 
@@ -273,7 +256,7 @@ class FrontController extends Controller
 				$prod->colaborador = (!empty($prod->colaborador)) ? Colaborador::where('categoria',$prod->colaborador)->get()->first() : null ;
 			}
 
-			return view('front.productos',compact('cats','catsall','productos','catProd','catPar'));
+			return view('front.productos',compact('cats','catsall','productos','catProd','slugCat'));
 
 			// return $productos->get();
 		}
@@ -290,7 +273,10 @@ class FrontController extends Controller
 			}
 
 			$prod = Producto::find($id);
-			$prod->gallery = $prod->fotos()->orderBy('orden','asc')->get();
+			
+				$prod->gallery = $prod->fotos()->orderBy('orden','asc')->get();
+			
+			
 			$prod->categoria = Categoria::find($prod->categoria);
 
 			if ($prod->colaborador) {
